@@ -1,0 +1,223 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4; 
+    color: #333;
+
+    /* Background image settings */
+    background-image: url('../picture/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px; 
+}
+
+/*
+  Main Content Container
+  Wraps all application content
+*/
+.container {
+    background-color: rgba(188, 189, 192, 0.799);
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    width: 90%; /* Relative width for responsiveness */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/*Creates animated star effects*/
+h1::before, h1::after {
+    content: " \2605";
+    display: inline-block;
+    animation: pulse 1.5s infinite alternate;
+    margin: 0 10px;
+    will-change: transform;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/*
+  Search Form Layout
+*/
+#movieForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/*
+  Input Field Styling
+*/
+#movieForm input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 0;
+}
+
+#movieForm button {
+    padding: 10px 15px;
+    background-color: #5b5b5b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/*
+  Buttons Hover
+*/
+#movieForm button:hover {
+    background-color: #373636;
+}
+
+#randomBtn {
+    background-color: #373636;
+}
+
+#randomBtn:hover {
+    background-color: #373636;
+}
+
+#clearBtn {
+    background-color: #373636;
+}
+
+#clearBtn:hover {
+    background-color: #373636;
+}
+
+/*
+  Movie Card Container
+*/
+.movie-card {
+    border: 1px solid #eef0f36b;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #eef0f36b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/*
+  Movie Title Styling
+*/
+.movie-card h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+/*
+  Movie Poster Image
+*/
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/*
+  Movie Information Grid
+  Displays movie details in organized layout
+*/
+.movie-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.movie-info p {
+    margin: 5px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Error message styling */
+.error {
+    color: #e74c3c;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e74c3c;
+    border-radius: 4px;
+    background-color: #fadbd8;
+}
+
+/* Success message styling */
+.success {
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*
+  Mobile Responsiveness
+  Adjustments for screens under 600px
+*/
+@media (max-width: 600px) {
+    #movieForm {
+        flex-direction: column;
+    }
+    
+    #movieForm input, #movieForm button {
+        width: 100%;
+    }
+}
+
+#inputError {
+    color: #e74c3c;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #e74c3c;
+    border-radius: 4px;
+    background-color: #fadbd8;
+}
+
+#movieTitle.error-border {
+    border: 1px solid #e74c3c;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    
+    #movieForm {
+        flex-direction: column;
+    }
+    
+    #movieForm input, #movieForm button {
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    
+    .movie-info {
+        grid-template-columns: 1fr; 
+    }
+}

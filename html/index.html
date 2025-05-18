@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find your movie</h1>
+        
+        <form id="movieForm">
+            <input type="text" id="movieTitle" placeholder="Enter movie title" required>
+            <button type="submit">Search</button>
+            <button type="button" id="randomBtn">Random Movie</button>
+            <button type="button" id="clearBtn">Clear Results</button>
+        </form>
+        
+        <div id="errorMessage" class="hidden"></div>
+        
+        <div id="results"></div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
